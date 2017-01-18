@@ -1,6 +1,5 @@
 # word2vec测试（结合结巴分词）
 
-
 ## 下载并预处理wiki数据
 
 下载地址：https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
@@ -30,6 +29,11 @@ python3 train_word2vec_model.py wiki.zh.seg.txt wiki.zh.text.model wiki.zh.text.
 ```
 
 ## 应用
+
+主要接口：
+
+- most_similar: 查找相近的关键词
+- similarity: 计算两个关键词的相近程度
 
 ```sh
 In [1]: import gensim
@@ -119,6 +123,12 @@ In [21]: for e in result:
 综合大学 0.5301772356033325
 理工学院 0.5294097661972046
 ```
+## 测试结果
+
+- 对于名人，例如成龙，袁隆平，习近平等，效果很好。
+- 对于太抽象的词，例如男人或者女人等，效果一般。
+- 对于具体的学校，例如华南理工大学，效果很好。
+- 加入`negative`参数之后，结果不是很满意。
 
 ## 参考
 
