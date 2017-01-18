@@ -1,0 +1,7 @@
+*.txt
+*.text
+*.xml
+*.bz2
+.ropeproject/
+*.bin
+*.dat
